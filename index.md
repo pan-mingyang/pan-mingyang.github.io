@@ -8,17 +8,17 @@ Email: mypan@ir.hit.edu.cn
 
 Github: [https://github.com/pan-mingyang](https://github.com/pan-mingyang)
 
-# Education
+## Education
 
 * 2016.9 - present: **Undergraduate** 
 <br /> in Harbin Institute of Technology (Major: Computer Science)
 
-# Reseach Experience
+## Reseach Experience
 
 * 2019.9 - present:**Research Assistant** (Mentor: Wanxiang Che)
 <br /> in Research Center for Social Computing and Information Retrieval
 
-# Awards
+## Awards
 
 * 2016 - 2019 People Scholarship (5 times)
 * 2017.12 First Price of Provincial Division in National Mathematics Competition for College Students
