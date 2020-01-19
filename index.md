@@ -11,7 +11,7 @@ Github: [https://github.com/pan-mingyang](https://github.com/pan-mingyang)
 # Education
 
 * 2016.9 - present: **Undergraduate** 
-<br />&nbsp;&nbsp;&nbsp;&nbsp;Harbin Institute of Technology (Major: Computer Science)
+<br /> Harbin Institute of Technology (Major: Computer Science)
 
 ## Reseach Experience
 
