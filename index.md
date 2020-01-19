@@ -2,7 +2,7 @@
 layout: default
 ---
 
-Hi, I'm Mingyang Pan, a senior undergraduate from [SCIR Lab](http://ir.hit.edu.cn) in [Harbin Institute of Technology](http://www.hit.edu.cn), advised by Prof. [Wanxiang Che](http://ir.hit.edu.cn/~car/). My research focuses on natural language processing.
+Hi, I'm Mingyang Pan (潘名扬), a senior undergraduate from [SCIR Lab](http://ir.hit.edu.cn) in [Harbin Institute of Technology](http://www.hit.edu.cn), advised by Prof. [Wanxiang Che](http://ir.hit.edu.cn/~car/). My research focuses on natural language processing.
 
 Email: mypan@ir.hit.edu.cn
 
