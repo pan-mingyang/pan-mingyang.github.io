@@ -2,13 +2,11 @@
 layout: default
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+I'm Mingyang Pan, a senior undergraduate from [SCIR Lab](http://ir.hit.edu.cn) in [Harbin Institute of Technology](http://www.hit.edu.cn). I'm advised by Prof. [Wanxiang Che](http://ir.hit.edu.cn/~car/), and my research focuses on natural language processing.
 
-[Link to another page](./another-page.html).
+Email: mypan@ir.hit.edu.cn
 
-There should be whitespace between paragraphs.
-
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+Github: [https://github.com/pan-mingyang](https://github.com/pan-mingyang)
 
 # Header 1
 
