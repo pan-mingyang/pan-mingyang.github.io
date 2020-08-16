@@ -1,5 +1,5 @@
 ---
-layout: default2
+layout: index
 ---
 
 ## Welcome to another page
