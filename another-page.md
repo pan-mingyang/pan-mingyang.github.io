@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default2
 ---
 
 ## Welcome to another page
