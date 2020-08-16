@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <style type="text/css">
+            <!--
+            .aa {
+                font-size: 48px;
+                font-weight: bold;
+                text-align: center;
+            }
+            .main { 
+                text-align: center;
+            }
+            -->
+        </style>
+        <script>
+        bgcolor = new Array("yellow", "blue", "green", "red", "purple");
+        textcolor = new Array("red", "yellow", "white", "blue", "orange");
+        k = 5
+        function init() {
+            texts = document.getElementsByClassName("aa");           
+
+            for (i=0; i < texts.length; ++i){
+                texts[i].style.backgroundColor = bgcolor[(i+k) % 5];
+                texts[i].style.color = textcolor[(i+k) % 5];
+            }
+            k = (k + 1) % 5;
+        }
+        
+        </script>
+    </head>
+    <body onload='init();setInterval("init()", 250);'>
+        <div class="aa" id="a0" style="background-color: yellow;color: purple;">
+            XPP生日快乐！！！
+        </div>
+        <br/>
+        <div class="aa" id="a1" style="background-color: blue;color: white;">
+            我是你的小迷弟~~~
+        </div>
+        <br />
+        <div class="aa" id="a2" style="background-color: lightgreen;color: black;">
+            XPP全球粉丝后援会永远支持你！！
+        </div>
+        <br />   
+        <div class="aa" id="a3" style="background-color: pink;color: blue;">
+            愿XPP腰好腿好心情好~~~
+        </div>
+        <br />
+        <div class="aa" id="a4" style="background-color: yellow;color: red;">
+            身体倍棒，吃嘛嘛香~~~
+        </div>
+        <br />
+        <div class='main'>
+        请原谅我糟糕的排版  by 潘<br />
+        <a href="main.htm" style="font-size: 36px;font-weight: bold;">进入主页</a>
+        </div>
+    </body>
+</html>
