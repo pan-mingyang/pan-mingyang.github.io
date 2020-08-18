@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>qs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>给XPP的情书*</h1>
+<p>*情书：陈情之书</p>
+<h2></h2>
+<p>XPP：</p>
+<p>&emsp;&emsp;生日快乐鸭~~</p>
+<p>&emsp;&emsp;算算日子，咱俩同居一室，竟达两年之久，然好景不长，于去年夏天劳燕分飞，分居异处，也有一年多了。</p>
+<p>&emsp;&emsp;在这个特殊的日子里，向你透露一个我珍藏多年的秘密，其实我从大一开始我就认识你了（废话）。第一次认识你是在刚上大一的时候，第一次班会选班委。当时我的内心活动变化是这样的：波澜不惊~~你一上台，哇这气质~~你一开口，哇这播音腔~~你一讲完，哇这演讲水平~~你一下台，哇这台步~~。然后我就瞬间成为了你的小迷弟。（你信不信</p>
+<p><center>
+<br />
+<em>《乖 乖 坐 好》</em></p>
+<img src="./assets/dayi.jpg" width = "400" alt="图片名称" align="center" />
+<p></center></p>
+<p>&emsp;&emsp;不知不觉就进入了大二，我们就开始了没羞没臊的同居生活。其实也许是上帝的安排，大一给你们安排了一个外班的和一个比较那啥的室友，所以大二才流离失所，多亏我们宿舍的收留，咱俩才得以（bei po）共处一室😏。</p>
+<p>&emsp;&emsp;还记得大二我刚回学校，一进寝室，你对我说的第一句话是：“名扬好帅啊~”。别问我为什么记得这么清楚，因为咱俩英雄所见略同（嘿嘿）。感觉自从你来了之后我们宿舍的气氛才真正的活跃起来，我们以前宿舍的原班人马感觉性格都比较闷，尤其是我。梦浩在英才学院有他们的安排，老哥是穆斯林吃饭不和我们一起，阳旭感觉也是内向的性格。其实很多时候都是我自己在自娱自乐（当然不是所有时候）。但是有了你宿舍就变了一个气候，大家变得活跃了不少，一起恰饭，一起恰鸡，一起打王者（虽然我不会）。挺怀念我们一起吃鸡的日子，一想起老哥说你：“别舔了！”，我就想乐233。干啥啥不行，舔包第一名😏。</p>
+<p>&emsp;&emsp;还有咱俩每天晚上的固定文娱活动——泡jio + 听戏。再告诉你一个秘密，其实我也是到大三才真正能听进去京剧的，大三下学期才第一次进剧场听京剧，大四上学期才去剧场听评剧（可惜你不在了，要不我就拉你一起去了；不过咱们一起去过两次德云社，嘿嘿），有时候也是强迫自己去听一些慢节奏的唱段，然后就稀里糊涂爱上京剧了，然后我就涎皮赖脸的拉你入坑233。虽然你总是不认真听玩手机吧（玩手什么？），不过还是挺欢乐的。</p>
+<p>&emsp;&emsp;咱们宿舍还有两大神器：我的笛子和你的快板。只要一响，不超过5秒宿舍的其他人就会喊，堪称扰民神器。诶，你的快板是不是后来拿走了，我记得是后来我找没找到。你可得好好练练，万一哪天咱俩落魄了，也不至于没饭吃，还能在大街上卖卖艺，你打板我唱 【狗头】。</p>
+<p>&emsp;&emsp;很荣幸地一点，咱们共同选了NLP方向（虽然不知道你是为了追随我😏还是别的原因）。大三一年咱们能形影不离地去上课（虽然操作系统最后只有我自己去了……（虽然是选修，不过我是真喜欢这个课）），一起抄作业（虽然大部分时候都是你抄我的（哪有那么多虽然（禁止套娃））），一起去做实验（一起蹭老师的巧克力），我给你调代码（终于不是一起了-_-）。满满的都是回忆啊~~</p>
+<p>&emsp;&emsp;翻了一下微信的聊天记录，2018年全年几乎都是带饭的py交易记录233，然后到了2019年你就学坏了，你就学会偷偷的走不给我带饭了，哼~，You bad bad~</p>
+<p><center><br />
+<em>《p y 交 易》</em></p>
+<img src="./assets/wx.jpg" width = "300" alt="图片名称" align="center" />
+<p></center></p>
+<p>&emsp;&emsp;这两天在翻看上大学以来拍的照骗，有点遗憾有你的照片也只有十几张，而且咱俩竟然也没有合照，放几张比较有意思的，一起怀念一下我们共同走过的时光。</p>
+<p><center><br />
+<em>2017.9.03 《浑 然 不 觉》</em></p>
+<img src="./assets/IMG_20170903_124442.jpg" width = "400" alt="图片名称" align="center" />
+<p></center></p>
+<p><center><br />
+<em>2017.10.06&amp;30 《这 啥 玩 意》</em></p>
+<img src="./assets/IMG_20171030_153100.jpg" width = "400" alt="图片名称" align="center" /> <p><br /></p>
+<img src="./assets/IMG_20171016_161821.jpg" width = "400" alt="图片名称" align="center" />
+<p></center></p>
+<p><center><br />
+<em>2017.10.06 《康 庄 大 道》</em></p>
+<img src="./assets/IMG_20171021_152801.jpg" width = "400" alt="图片名称" align="center" />
+<p></center></p>
+<p><center><br />
+<em>2017.11 《认 真 听 讲》</em></p>
+<img src="./assets/IMG_20171103_142203.jpg" width = "400" alt="图片名称" align="center" /><p><br /></p>
+<img src="./assets/IMG_20171212_085431.jpg" width = "400" alt="图片名称" align="center" />
+<p></center></p>
+<p><center><br />
+<em>2017.11 《我 没 喝 多》</em></p>
+<img src="./assets/IMG_20171111_195601.jpg" width = "400" alt="图片名称" align="center" /><p><br /></p>
+<img src="./assets/IMG_20171111_205523.jpg" width = "400" alt="图片名称" align="center" />
+<p></center></p>
+<p><center><br />
+<em>2017.11 《迷 迷 瞪 瞪》</em></p>
+<img src="./assets/IMG_20171209_090029.jpg" width = "400" alt="图片名称" align="center" />
+<p></center></p>
+<p><center><br />
+<em>2017.12 《狗 刨 冠 军》</em></p>
+<img src="./assets/IMG_20171204_222746.jpg" width = "400" alt="图片名称" align="center" /><p><br /></p>
+<img src="./assets/IMG_20171204_222751.jpg" width = "400" alt="图片名称" align="center" />
+<p></center></p>
+<p><center><br />
+<em>2017.12 《朗 诵 带 师》</em></p>
+<img src="./assets/IMG_20171222_211347.jpg" width = "400" alt="图片名称" align="center" />
+<p></center>
+<center><br />
+<em>2017.12 《舔 包 之 王》</em></p>
+<img src="./assets/IMG_20171231_230505.jpg" width = "400" alt="图片名称" align="center" />
+<p></center></p>
+<p><center><br />
+<em>2018.4 《我是谁？我在哪？》</em></p>
+<img src="./assets/IMG_20180429_185418.jpg" width = "400" alt="图片名称" align="center" />
+<p></center></p>
+<p><center><br />
+<em>2018.5 《盛 世 美 颜》</em></p>
+<img src="./assets/IMG_20180519_194916_Bokeh.jpg" width = "400" alt="图片名称" align="center" />
+<p></center></p>
+<p><center><br />
+<em>2018.6 《又 看 毛 片 ？》</em></p>
+<img src="./assets/IMG_20180615_150303.jpg" width = "400" alt="图片名称" align="center" />
+<p></center></p>
+<p><center><br />
+<em>2018.6 《偷 窥 未 遂》</em></p>
+<img src="./assets/IMG_20180623_171743.jpg" width = "400" alt="图片名称" align="center" /><p><br /></p>
+<img src="./assets/IMG_20180623_171745.jpg" width = "400" alt="图片名称" align="center" />
+<p></center></p>
+<p><center><br />
+<em>2018.9 《班 长 是 我》</em></p>
+<img src="./assets/IMG_20180904_180914.jpg" width = "400" alt="图片名称" align="center" />
+<p></center></p>
+<p><center><br />
+<em>2018.10 《偷 拍 未 遂 2》</em></p>
+<img src="./assets/IMG_20181019_135129.jpg" width = "400" alt="图片名称" align="center" />
+<p></center></p>
+<p><center><br />
+<em>2018.11 《我 是 最 二》</em></p>
+<img src="./assets/QQ20200817165556.jpg" width = "400" alt="图片名称" align="center" />
+<p></center></p>
+<p><center><br />
+<em>2019.5 《举 重 选 手》</em></p>
+<img src="./assets/IMG_20190513_205954.jpg" width = "400" alt="图片名称" align="center" />
+<p></center></p>
+<p><center><br />
+<em>2019.5 《直 川 内 库》</em></p>
+<img src="./assets/IMG_20190520_121833.jpg" width = "400" alt="图片名称" align="center" />
+<p></center></p>
+<p>&emsp;&emsp;Emmm，早上没事翻你空间，看到了这个……（不做评价</p>
+<p><center><br />
+<em>《喜 当 爹》</em></p>
+<img src="./assets/qq.jpg" width = "400" alt="图片名称" align="center" />
+<p></center></p>
+<p>&emsp;&emsp;两年的时间匆匆过去，你毅然决然背井离乡，离开了我们共同生活过的6008。在你不在的日子里，我时不时地会回头看向你的床头，望着你的遗物（不是），思绪万千，最后只留下一声怅然的叹息。</p>
+<p>&emsp;&emsp;今年由于疫情的原因没能返校，事先约定的暑假回来看我们也未得实现。上半年在家忙着做毕设，看论文；下半年时间相对宽松一些，但是在家呆的也比较空虚寂寞。多亏了三大法宝（Skype、OBS和加速器），才使得我们之间的距离变得不再遥远。得以一起唠唠嗑，一起打打游戏，一起刷刷b站，一起看看学习视频（😏前所未有的体验，以前我都是自己偷着学习）。</p>
+<p>&emsp;&emsp;哎呀~写到这里差不多把过去都回忆了一遍，颇多感慨呀。想起来一句诗，“一切爱情都在心里，一切往事都在梦中”（咳咳，我强调的是第二句，但是诗这是一整句的对偶……）。希望你能早日回国，希望咱们能再次见面（你回国后我一定去找你玩嘿嘿），希望我们不离不弃，希望我们生死相依（嗯？？好像哪里不太对）。</p>
+<p>&emsp;&emsp;最后写一首打油诗吧（好久不写诗了）：</p>
+<p>&emsp;&emsp;&emsp;&emsp;
+犹忆当时少年郎，共度青春好时光。</p>
+<p>&emsp;&emsp;&emsp;&emsp;
+吃鸡舔包高手在，王者掉段也平常。</p>
+<p>&emsp;&emsp;&emsp;&emsp;
+一同听戏悠然乐，共赴课堂话短长。</p>
+<p>&emsp;&emsp;&emsp;&emsp;
+旧游而今何处去，唯有真情在心肠。</p>
+<p>by 潘</p>
+<p>2020.8.17</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
