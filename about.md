@@ -2,7 +2,7 @@
 layout: default
 ---
 
-Hi, I'm Mingyang Pan (潘名扬), a senior undergraduate from [SCIR Lab](http://ir.hit.edu.cn) in [Harbin Institute of Technology](http://www.hit.edu.cn), advised by Prof. [Wanxiang Che](http://ir.hit.edu.cn/~car/). My research focuses on natural language processing.
+Hi, I'm Mingyang Pan (潘名扬), a graduate student from [SCIR Lab](http://ir.hit.edu.cn) in [Harbin Institute of Technology](http://www.hit.edu.cn), advised by Prof. [Wanxiang Che](http://ir.hit.edu.cn/~car/). My research focuses on natural language processing and Text-to-SQL.
 
 Email: mypan@ir.hit.edu.cn
 
@@ -10,12 +10,16 @@ Github: [https://github.com/pan-mingyang](https://github.com/pan-mingyang)
 
 ## Education
 
-* 2016.9 - present: **Undergraduate** 
+* 2020.9 - *present*: **Graduate Student** 
+<br /> in Harbin Institute of Technology 
+<br /> (Major: Computer Science, Advisor: Wanxiang Che)
+
+* 2016.9 - 2020.6: **Bachelor of Engineering** 
 <br /> in Harbin Institute of Technology (Major: Computer Science)
 
 ## Reseach Experience
 
-* 2019.9 - present:**Research Assistant** (Mentor: Wanxiang Che)
+* 2019.9 - 2020.8: **Research Intern** (Advisor: Wanxiang Che)
 <br /> in Research Center for Social Computing and Information Retrieval
 
 ## Awards
