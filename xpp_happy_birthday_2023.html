@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!--
+	NOTES:
+	1. All tokens are represented by '$' sign in the template.
+	2. You can write your code only wherever mentioned.
+	3. All occurrences of existing tokens will be replaced by their appropriate values.
+	4. Blank lines will be removed automatically.
+	5. Remove unnecessary comments before creating your template.
+-->
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="authoring-tool" content="Adobe_Animate_CC">
+<title>xpp_happy_birthday_2023</title>
+<!-- write your code here -->
+<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+<script src="xpp_happy_birthday_2023.js"></script>
+<script>
+// Global Scripts
+	var l_edge = 100;
+var r_edge = 1500;
+var speed = 35;
+var g_speed = 16;
+var init_1 = true;
+var frame = 0;
+var left = false;
+var right = false;
+var paused = false;
+var generate_gift_ratio = 0.18;
+var max_gift_num = 16;
+var gift_list = [];
+var score = 0;
+var up_bond = 20;
+var down_bond = 300;
+var side_bond = 80;
+var ps = null;
+var gs = null;
+var has_ps = false;
+var has_gs = false;
+var gift_no = -1;
+function moveRight(mc, speed) {
+	if (mc.x <= r_edge) {
+		mc.x += speed;
+	}
+}
+function moveLeft(mc, speed) {
+	if (mc.x >= l_edge) {
+		mc.x -= speed;
+	}
+}
+var hp = 100;
+var atk = 30;
+var def = 30;
+var spa = 30;
+var spd = 30;
+var luk = 30;
+var bj = 30;
+var mp = 30;
+var mon = 250;
+var gift_obj = {
+	'steam': {
+		'ratio': 10,
+		'action': () => { mon -= 50; },
+		'str': 'Steam促销活动, 财产 -50',
+		'frame': 1
+	},
+	'qlx': {
+		'ratio': 10,
+		'action': () => { def += 10; },
+		'str': '前列腺按摩仪, 防御 +10',
+		'frame': 2
+	},
+	'mengnan': {
+		'ratio': 10,
+		'action': () => { atk += 10; },
+		'str': '猛男大军, 攻击 +10',
+		'frame': 3
+	},
+	'lvbu': {
+		'ratio': 10,
+		'action': () => { atk += 10; },
+		'str': '人中出吕布斐济杯, 攻击 +10',
+		'frame': 4
+	},
+	'kucha': {
+		'ratio': 10,
+		'action': () => { luk += 10; },
+		'str': '红裤衩, 幸运 +10',
+		'frame': 5
+	},
+	'hps': {
+		'ratio': 10,
+		'action': () => { spa += 10; },
+		'str': '学习资料, 特攻 +10',
+		'frame': 6
+	},
+	'xpp': {
+		'ratio': 10,
+		'action': () => { bj += 10; },
+		'str': '高清大片《XPP向往的生活》, 暴击 +10',
+		'frame': 7
+	},
+	'meinv': {
+		'ratio': 10,
+		'action': () => { spd += 10; },
+		'str': '大美女, 特防 +10',
+		'frame': 8
+	},
+	'fjb': {
+		'ratio': 10,
+		'action': () => { mp += 10; },
+		'str': '美少女斐济杯, 魔力 +10',
+		'frame': 9
+	},
+	'lingshi': {
+		'ratio': 10,
+		'action': () => { def += 10; },
+		'str': '零食大礼包, 防御 +10',
+		'frame': 10
+	},
+	'cake': {
+		'ratio': 10,
+		'action': () => { hp += 100; },
+		'str': '生日蛋糕, HP +10',
+		'frame': 11
+	},
+	'bear': {
+		'ratio': 10,
+		'action': () => { spd += 10; },
+		'str': '小熊玩偶, 特防 +10',
+		'frame': 12
+	},
+	'tt': {
+		'ratio': 10,
+		'action': () => { atk += 5; },
+		'str': '杜蕾斯套套, 攻击 +5',
+		'frame': 13
+	},
+	'meinv_zelda': {
+		'ratio': 10,
+		'action': () => { spd += 15; },
+		'str': '大美女（乜儿夕限定）, 特防 +15',
+		'frame': 14
+	},
+};
+var total_ratio = 0;
+function init_ratio(__g=1){
+	total_ratio = 0;
+	for (let k in gift_obj) {
+		gift_obj[k]['l'] = total_ratio;
+		gift_obj[k]['r'] = total_ratio + gift_obj[k]['ratio'];
+		if (__g != 0) gift_obj[k]['visited'] = false;
+		total_ratio += gift_obj[k]['ratio'];
+		// console.log(total_ratio);
+		// console.log(gift_obj[k]);
+	}
+}
+init_ratio();
+function get_gift() {
+	var rand = Math.random() * total_ratio;
+	for (let k in gift_obj) {
+		if (rand >= gift_obj[k]['l'] && rand < gift_obj[k]['r']) {
+			return gift_obj[k];
+		}
+	}
+	return gift_obj[0];
+}
+var prompt_get_gift = '';
+var g_tick = null;
+var g_kd = null;
+var g_ku = null;
+var score_s1 = 0;
+var second_stage = false;</script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("CD4B3AC46D0EDE4C966AF3EFAF9E8A2B");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.xpp_happy_birthday_2023();
+	stage = new lib.Stage(canvas);	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.framerate = lib.properties.fps;
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+<!-- write your code here -->
+</head>
+<body onload="init();" style="margin:0px;">
+	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1600px; height:900px">
+		<canvas id="canvas" width="1600" height="900" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1600px; height:900px; position: absolute; left: 0px; top: 0px; display: block;">
+		</div>
+	</div>
+</body>
+</html>
