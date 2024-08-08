@@ -1,0 +1,439 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Time Flies">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="0.2.8 - 2019-03-09 Fixed: Edge form support.(#178 - @robinnorth) Fixed: Removed keyup event listener for forms.(#184 - @BehindTheMath) Fixed: Bugs in evalScripts().(#186 - @BehindTheMath) Fixed: Handl">
+<meta property="og:type" content="website">
+<meta property="og:title" content="page.title">
+<meta property="og:url" content="http://example.com/lib/pjax/CHANGELOG.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="0.2.8 - 2019-03-09 Fixed: Edge form support.(#178 - @robinnorth) Fixed: Removed keyup event listener for forms.(#184 - @BehindTheMath) Fixed: Bugs in evalScripts().(#186 - @BehindTheMath) Fixed: Handl">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-06T02:59:19.081Z">
+<meta property="article:modified_time" content="2024-08-06T02:59:19.081Z">
+<meta property="article:author" content="Time Flies">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>page.title - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>标题</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="page.title"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<article class="page-content">
+  <h1 id="0-2-8-2019-03-09"><a href="#0-2-8-2019-03-09" class="headerlink" title="0.2.8 - 2019-03-09"></a>0.2.8 - 2019-03-09</h1><ul>
+<li>Fixed: Edge form support.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/178">#178</a> - @robinnorth)</li>
+<li>Fixed: Removed keyup event listener for forms.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/184">#184</a> - @BehindTheMath)</li>
+<li>Fixed: Bugs in evalScripts().<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/186">#186</a> - @BehindTheMath)</li>
+<li>Fixed: Handle non-string HTML passed to loadContent().<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/200">#200</a> - @BehindTheMath)</li>
+<li>Tooling: Switch linting to ESLint and Prettier.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/191">#191</a> - @BehindTheMath)</li>
+</ul>
+<h1 id="0-2-7-2018-08-15"><a href="#0-2-7-2018-08-15" class="headerlink" title="0.2.7 - 2018-08-15"></a>0.2.7 - 2018-08-15</h1><ul>
+<li>Fixed: Parsing values of option elements in forms.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/162">#162</a> - @BehindTheMath)</li>
+<li>Fixed: Added index.d.ts to package.json so it will be installed by npm.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/commit/c589ab9c25bee6161bf3e557eaca44e51c14fb89">c589ab9</a> - @BehindTheMath)</li>
+<li>Fixed: <code>options.history</code> to correctly parse being set to false.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/165">#165</a> - @BehindTheMath).</li>
+<li>Fixed: Pass the current <code>options</code> object to <code>loadContent()</code>.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/171">#171</a> - @BehindTheMath)</li>
+<li>Fixed: Ensure correct XHR encoding for multipart&#x2F;form-data forms<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/174">#174</a> - @BehindTheMath)</li>
+<li>Added: More documentation.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/160">#160</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/171">#171</a> - @robinnorth, @BehindTheMath)</li>
+</ul>
+<h1 id="0-2-6-2018-04-30"><a href="#0-2-6-2018-04-30" class="headerlink" title="0.2.6 - 2018-04-30"></a>0.2.6 - 2018-04-30</h1><ul>
+<li>Fixed: Form submission for GET requests.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/129">#129</a> - @robinnorth)</li>
+<li>Fixed: Refactor <code>loadUrl()</code> to make manually calling simpler.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/134">#134</a> - @robinnorth)</li>
+<li>Fixed: Support multiple select fields in form submissions.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/147">#147</a> - @robinnorth)</li>
+<li>Fixed: Use the same options object in <code>handle-response</code> as in <code>send-request</code>. This way, <code>pjax.state.options</code> will also have the request options.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/148">#148</a> - @BehindTheMath)</li>
+<li>Added: Move the XHR callback to a separate method, and trigger an error event if the response cannot be parsed.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/137">#137</a> - @BehindTheMath)</li>
+<li>Added: TypeScript definitions.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/138">#138</a> - @BehindTheMath)</li>
+<li>Added: <code>replaceNode</code> switch, as an alternative to the <code>outerHTML</code> switch.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/141">#141</a> - @BehindTheMath)</li>
+<li>Added: <code>X-PJAX-Selectors</code> HTTP header. This is a serialized JSON array of selectors, taken from <code>options.selectors</code>. You can use this to send back only the elements that Pjax will use to switch, instead of sending the whole page.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/144">#144</a> - @BehindTheMath)</li>
+<li>Added: An option to use <code>FormData</code> to submit forms.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/153">#153</a> - @BehindTheMath)</li>
+<li>Added: Tests.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/commit/f98f2dd63b48113ff91b6bd8808257bfc723ef6b">f98f2dd</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/145">#145</a> - @robinnorth, @BehindTheMath)</li>
+</ul>
+<h1 id="0-2-5-2018-02-02"><a href="#0-2-5-2018-02-02" class="headerlink" title="0.2.5 - 2018-02-02"></a>0.2.5 - 2018-02-02</h1><ul>
+<li>Fixed: Async switch functions now work correctly, because the DOM is now parsed after all the switches finish.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/79">#79</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/110">#110</a> - @oskarrough, @BehindTheMath, @robinnorth)</li>
+<li>Fixed: Bug on IE11 preventing AJAX page refresh.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/81">#81</a> - @CPTechnikVX)</li>
+<li>Fixed: Default switches are now available as <code>Pjax.switches</code>.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/92">#92</a> - @BehindTheMath)</li>
+<li>Fixed: An error that was caused by a missing <code>switchElementsAlt</code>.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/93">#93</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/104">#104</a> - @BehindTheMath, @robinnorth)</li>
+<li>Fixed: Incorrect <code>main</code> field in npm package<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/105">#105</a> - @robinnorth)</li>
+<li>Fixed: A pending XHR is now aborted if the user navigates somewhere else before the request is finished.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/114">#114</a> - @robinnorth)</li>
+<li>Fixed: When rendering new content, focus will now be removed only from elements within one of the containers manipulated by Pjax.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/116">#116</a> - @BehindTheMath)</li>
+<li>Fixed: Stop dispatching extraneous <code>pjax:complete</code> events when external scripts load<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/118">#118</a> - @robinnorth)</li>
+<li>Added: Send the <code>X-PJAX</code> header with XHR requests.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/80">#80</a> - @bram1028)</li>
+<li>Added: Direct download link for script tags. (@MoOx)</li>
+<li>Added: Pass the element that triggered Pjax to the <code>pjax:send</code> event.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/94">#94</a> - @BehindTheMath)</li>
+<li>Added: An option to set a timeout for XHR requests.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/95">#95</a> - @BehindTheMath)</li>
+<li>Added: Checks for XHR redirects<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/101">#101</a> - @BehindTheMath)</li>
+<li>Added: Save scroll position with history, and restore when navigating backwards or forwards.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/110">#110</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/119">#119</a> - @BehindTheMath, @robinnorth)</li>
+<li>Added: Scroll to element position when URL contains a hash<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/110">#110</a> - @BehindTheMath)</li>
+<li>Added: Minified version of the Pjax bundle.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/115">#115</a> - @BehindTheMath)</li>
+<li>Changed: Miscellaneous code and tests cleanup.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/96">#96</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/98">#98</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/99">#99</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/1070">#100</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/107">#107</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/113">#113</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/120">#120</a> - @BehindTheMath, @MoOx, @robinnorth)</li>
+</ul>
+<h1 id="0-2-4-2016-06-28"><a href="#0-2-4-2016-06-28" class="headerlink" title="0.2.4 - 2016-06-28"></a>0.2.4 - 2016-06-28</h1><ul>
+<li>Fixed: <code>refresh</code> should now work (use <code>this.parseDOM</code> for refresh)<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/67">#67</a> - @compressed)</li>
+<li>Fixed: Some attributes, such as <code>itemscope</code> have no corresponding value.<br>This change allows them to still be set.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/67">#67</a> - @compressed)</li>
+<li>Added: <code>cacheBust</code> option<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/71">#71</a> - @tremby)</li>
+</ul>
+<h1 id="0-2-3-2016-03-24"><a href="#0-2-3-2016-03-24" class="headerlink" title="0.2.3 - 2016-03-24"></a>0.2.3 - 2016-03-24</h1><ul>
+<li>Fixed: <code>currentUrlFullReload</code> option now works</li>
+<li>Fixed: <code>this.reload</code> is now a Function<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/issues/65">#65</a>)</li>
+</ul>
+<h1 id="0-2-2-2016-03-12"><a href="#0-2-2-2016-03-12" class="headerlink" title="0.2.2 - 2016-03-12"></a>0.2.2 - 2016-03-12</h1><ul>
+<li>Fixed: added back standalone version in <code>./pjax.js</code><br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/issues/57">#57</a></li>
+<li>Fixed: error when using pjax with google analytics (<code>options</code> was undefined)<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/59">#59</a>)</li>
+<li>Fixed: HierarchyRequestError error<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/49">#49</a>)</li>
+<li>Fixed: <code>TypeError: Pjax.forEachEls is not a function</code><br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/52">#52</a>)</li>
+<li>Fixed: <code>TypeError: Pjax.executeScripts is not a function</code><br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/52">#52</a>)</li>
+<li>Fixed: <code>TypeError: Pjax.clone is not a function</code><br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/52">#52</a>)</li>
+<li>Added: Ignore events with prevented defaults<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/50">#50</a>)</li>
+</ul>
+<h1 id="0-2-1-2015-02-04"><a href="#0-2-1-2015-02-04" class="headerlink" title="0.2.1 - 2015-02-04"></a>0.2.1 - 2015-02-04</h1><ul>
+<li>Fixed: it’s better when a release have actual files.</li>
+</ul>
+<h1 id="0-2-0-2015-02-04"><a href="#0-2-0-2015-02-04" class="headerlink" title="0.2.0 - 2015-02-04"></a>0.2.0 - 2015-02-04</h1><ul>
+<li>Fixed: prevent scrollTo from being converted from false to 0 (<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/33">#33</a>)</li>
+<li>Changed: code exploded in commonjs style</li>
+<li>Added: lots of tests</li>
+<li>Added: <code>refresh</code> method to force update a DOM element (<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/36">#36</a>)</li>
+</ul>
+<h1 id="0-1-4-2014-10-14"><a href="#0-1-4-2014-10-14" class="headerlink" title="0.1.4 - 2014-10-14"></a>0.1.4 - 2014-10-14</h1><ul>
+<li>Fixed: allow to load pages without any attributes on <code>&lt;html&gt;</code> element (fix <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/issues/6">#6</a>)</li>
+<li>Fixed: make <code>Pjax.switches.sideBySide</code> method usable (fix <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/issues/13">#13</a>)</li>
+</ul>
+<h1 id="0-1-3-2014-09-16"><a href="#0-1-3-2014-09-16" class="headerlink" title="0.1.3 - 2014-09-16"></a>0.1.3 - 2014-09-16</h1><ul>
+<li>Fixed: clicking on the current url somewhere does not produce a full reload by default (see option <code>currentUrlFullReload</code>)</li>
+<li>Fixed: <code>document.implementation.createHTMLDocument</code> error (in IE10, ref <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/16">#16</a>)</li>
+</ul>
+<h1 id="0-1-2-2014-04-03"><a href="#0-1-2-2014-04-03" class="headerlink" title="0.1.2 - 2014-04-03"></a>0.1.2 - 2014-04-03</h1><ul>
+<li>Changed: <code>pjax.js</code> relocated in <code>src/</code></li>
+<li>Fixed: <code>&lt;html&gt;</code> attributes of pjaxified document are now available</li>
+</ul>
+<h1 id="0-1-1-2014-04-02"><a href="#0-1-1-2014-04-02" class="headerlink" title="0.1.1 - 2014-04-02"></a>0.1.1 - 2014-04-02</h1><ul>
+<li>Fixed: safer UMD wrapper (fix concat issue)</li>
+</ul>
+<h1 id="0-1-0-2014-03-24"><a href="#0-1-0-2014-03-24" class="headerlink" title="0.1.0 - 2014-03-24"></a>0.1.0 - 2014-03-24</h1><p>✨ Initial release</p>
+
+
+  
+
+</article>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+<i class="iconfont icon-love"></i>
+<a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
